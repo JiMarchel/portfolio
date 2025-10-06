@@ -19,7 +19,7 @@
   />
 
   <div
-    class="text-white z-50 relative flex flex-col items-center justify-center"
+    class="text-white z-50 relative flex flex-col items-center justify-center overflow-hidden"
   >
     <ModeWatcher defaultMode="dark" />
     <Navbar />
