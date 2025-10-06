@@ -13,7 +13,7 @@
 <div>
   <a
     href="/posts/{post.slug}"
-    class="w-full p-4 border border-gray-700 rounded-lg grid grid-cols-5 gap-3 sm:gap-5 shadow-2xl hover:border-pink-600 transition-all duration-200 cursor-pointer"
+    class="w-full p-4 border border-gray-700 rounded-lg grid grid-cols-5 sm:grid-cols-4 gap-3 sm:gap-5 shadow-2xl hover:border-pink-600 transition-all duration-200 cursor-pointer"
   >
     <!-- Konten (full-width mobile, 3/4 desktop) -->
     <div class="space-y-1 col-span-3 flex flex-col justify-between">
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Gambar (full-width mobile, 1/4 desktop) -->
-    <div class="col-span-2 sm:order-last ">
+    <div class="col-span-2 sm:col-span-1 sm:order-last ">
       <div class="h-32 sm:h-full w-full overflow-hidden rounded">
         <img
           src={post.mainImage.url}
