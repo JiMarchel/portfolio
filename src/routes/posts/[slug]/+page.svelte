@@ -24,7 +24,7 @@
   siteName="Moch Jimmy Marchel - Post"
 />
 
-<article class="prose prose-invert max-w-2xl mx-auto py-8">
+<article class="prose prose-invert pl-4 pr-9 sm:pl-0 sm:pr-0 w-sm sm:w-2xl mx-auto py-8">
   <Button onclick={goBack} class="flex items-center mb-10 cursor-pointer"
     ><ChevronLeft size="16" /> Back</Button
   >
