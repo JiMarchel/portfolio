@@ -10,7 +10,7 @@
 </script>
 
 <nav
-  class="border-b border-gray py-2 px-1 flex pt-5 items-center justify-between gap-2 shadow-2xl w-2xl"
+  class="border-b border-gray py-2 px-1 flex pt-5 items-center justify-between gap-14 sm:gap-2 shadow-2xl sm:w-2xl"
 >
   <div class="flex items-center gap-4">
     <a href="/" class="hover:scale-125 transition-all duration-200">
