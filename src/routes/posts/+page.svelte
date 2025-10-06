@@ -7,7 +7,7 @@
   import Metadata from "$lib/components/metadata.svelte";
 
   let { data } = $props();
-    console.log(data)
+
   const perPage = 5;
   let currentPage = $derived.by(() => {
     const p = Number(page.url.searchParams.get("page") ?? "1");
@@ -34,8 +34,7 @@
 <div
   class="text-white z-50 relative flex flex-col items-center justify-center py-10"
 >
-
-  <section class="flex flex-col w-xl gap-2 pb-5">
+  <section class="flex flex-col px-2 sm:px-0 sm:w-xl gap-2 pb-5">
     {#each posts as post}
       <Card {post} />
     {/each}
@@ -43,7 +42,6 @@
 
   <Pagination.Root {count} {perPage} bind:page={currentPage} {onPageChange}>
     {#snippet children({ pages, currentPage })}
-      {console.log(pages)}
       <Pagination.Content>
         <Pagination.Item>
           <Pagination.PrevButton>
