@@ -30,7 +30,7 @@ I use this website to store my CTF writeups and maybe share my interesting exper
     </div>
   </div>
 
-  <div class="flex flex-col pt-10 max-w-xl gap-2">
+  <div class="flex flex-col pt-10 w-sm px-5 sm:px-0 sm:w-xl gap-2">
     <h1
       class="bg-gradient-to-br from-white to-gray-400/80 bg-clip-text text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
     >
@@ -47,9 +47,9 @@ I use this website to store my CTF writeups and maybe share my interesting exper
     </p>
   </div>
 
-  <section class="flex flex-col pt-15 w-xl gap-2">
+  <section class="flex flex-col pt-15 px-5 sm:px-0 w-sm sm:w-xl gap-2 pb-10">
     <h1
-      class="whitespace-pre-wrap bg-gradient-to-br from-white to-gray-400/80 bg-clip-text text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
+      class="bg-gradient-to-br from-white to-gray-400/80 bg-clip-text text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
     >
       Latest Posts
     </h1>
