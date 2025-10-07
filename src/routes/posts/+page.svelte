@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "$lib/components/card-post.svelte";
   import * as Pagination from "$lib/components/ui/pagination/index.js";
-  import { ChevronLeftIcon, ChevronRightIcon, House } from "lucide-svelte";
+  import { ChevronLeftIcon, ChevronRightIcon } from "lucide-svelte";
   import { page } from "$app/state";
   import { goto } from "$app/navigation";
   import Metadata from "$lib/components/metadata.svelte";
