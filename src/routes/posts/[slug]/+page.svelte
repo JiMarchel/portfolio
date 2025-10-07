@@ -2,13 +2,13 @@
   import { PortableText } from "@portabletext/svelte";
   import CodeBlock from "$lib/components/code-block.svelte";
   import Image from "$lib/components/image.svelte";
-  import AbsoluteUrl from "$lib/components/absolute-url.svelte";
   import CustomHeading from "$lib/components/custom-heading.svelte";
   import Text from "$lib/components/text.svelte";
   import { ChevronLeft } from "lucide-svelte";
   import Button from "$lib/components/ui/button/button.svelte";
   import CustomList from "$lib/components/custom-list.svelte";
   import Metadata from "$lib/components/metadata.svelte";
+  import CustomLink from "$lib/components/custom-link.svelte";
 
   const { data } = $props();
   const post = data.post;
@@ -64,12 +64,12 @@
             blockquote: Text,
           },
           marks: {
-            // link: Link // Custom renderer untuk link, bold, dll.
-            absUrl: AbsoluteUrl,
+            // link: CustomLink,
+            
+            // absUrl: AbsoluteUrl
           },
           list: {
             bullet: CustomList,
-            number: CustomList,
           },
         }}
       />
