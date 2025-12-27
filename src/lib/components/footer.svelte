@@ -7,7 +7,7 @@
     class="max-w-3xl mx-auto px-6 flex flex-row items-center justify-between gap-4"
   >
     <p class="text-sm text-muted-foreground">
-     © 2025
+     © 2026
     </p>
 
     <div class="flex items-center gap-4">
