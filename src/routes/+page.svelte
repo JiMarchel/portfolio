@@ -25,7 +25,7 @@ I use this website to store my CTF writeups and maybe share my interesting exper
         <h1
           class="text-3xl sm:text-5xl font-bold tracking-tight text-foreground"
         >
-          Hey, I'm Moch Jimmy Marchel
+          Halo haii, I'm Moch Jimmy Marchel
         </h1>
 
         <div class="relative shrink-0 sm:hidden">
@@ -36,7 +36,7 @@ I use this website to store my CTF writeups and maybe share my interesting exper
         </div>
       </div>
       <p class="text-lg text-muted-foreground leading-relaxed">
-        Halo hai!, I enjoy writing Typescript and exploring Programming Languages. I
+        I enjoy writing Typescript and exploring Programming Languages. I
         use this website to store my CTF writeups and maybe share my interesting
         experiences in the future. Currently focused on learning web
         exploitation and secure coding practices.
