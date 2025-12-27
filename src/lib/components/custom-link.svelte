@@ -22,7 +22,7 @@
 </script>
 
 {#if value.url}
-  <a href={value.url} target={newWindow ? '_blank' : undefined} class="text-blue-600 hover:underline">
+  <a href={value.url} target={newWindow ? '_blank' : undefined} class="font-medium text-blue-500 hover:text-blue-400 hover:underline transition-colors">
     <!-- Marks receive children which you can render with Svelte's slots -->
     {@render children()}
   </a>

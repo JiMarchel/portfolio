@@ -10,46 +10,31 @@
   };
 </script>
 
-<div>
-  <a
+<a
     href="/posts/{post.slug}"
-    class="w-full p-4 border border-gray-700 rounded-lg grid grid-cols-5 sm:grid-cols-4 gap-3 sm:gap-5 shadow-2xl hover:border-pink-600 transition-all duration-200 cursor-pointer"
+    class="group flex flex-col gap-2 p-4 -mx-4 rounded-md hover:bg-muted/50 transition-colors"
   >
-    <!-- Konten (full-width mobile, 3/4 desktop) -->
-    <div class="space-y-1 col-span-3 flex flex-col justify-between">
-      <div>
-        <h1 class="font-bold text-lg sm:text-xl line-clamp-2">{post.title}</h1>
-        <p class="text-gray-400 text-sm flex items-center gap-1 mt-1">
-          <span>
-            <Calendar size={14} />
-          </span>
-          {new Date(post.publishedAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
-      </div>
+    <div class="flex flex-col gap-1">
+      <h3 class="font-medium text-foreground group-hover:text-primary transition-colors">
+        {post.title}
+      </h3>
       
-      <div class="flex flex-wrap gap-1 mt-2">
-        {#each post.categories.sort((a, b) => b.title.length - a.title.length) as category}
-          <span class="text-xs bg-gray-900 text-gray-400 px-2 py-1 rounded-full"
-            >{category.title}</span
-          >
-        {/each}
-      </div>
-    </div>
-
-    <!-- Gambar (full-width mobile, 1/4 desktop) -->
-    <div class="col-span-2 sm:col-span-1 sm:order-last ">
-      <div class="h-32 sm:h-full w-full overflow-hidden rounded">
-        <img
-          src={post.mainImage.url}
-          alt={post.title}
-          class="h-full w-full object-cover"
-          loading="lazy"
-        />
+      <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+        <time datetime={post.publishedAt} class="shrink-0">
+            {new Date(post.publishedAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short", 
+              day: "numeric",
+            })}
+        </time>
+        {#if post.categories?.length}
+            <span class="hidden sm:inline">•</span>
+            <div class="flex flex-wrap gap-2">
+                {#each post.categories as category}
+                    <span class="bg-muted px-1.5 py-0.5 rounded text-xs">{category.title}</span>
+                {/each}
+            </div>
+        {/if}
       </div>
     </div>
   </a>
-</div>

@@ -48,6 +48,7 @@ export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)]
     "url": asset->url,
     "dims": asset->metadata.dimensions
   },
+  "excerpt": select(defined(excerpt) && excerpt != "" => excerpt, defined(body) => pt::text(body)[0...180], ""),
   publishedAt,
   categories[]->{ title, "slug": slug.current }
 }`;
@@ -65,6 +66,7 @@ export const POST_QUERY = `
   },
   "excerpt": select(defined(excerpt) && excerpt != "" => excerpt, defined(body) => pt::text(body)[0...180], ""),
   publishedAt,
-  categories[]->{ title, "slug": slug.current }
+  categories[]->{ title, "slug": slug.current },
+  author->{name, image{ "url": asset->url }}
 }
 `;

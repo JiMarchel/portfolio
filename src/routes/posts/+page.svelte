@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Card from "$lib/components/card-post.svelte";
+  import CardDetailed from "$lib/components/card-detailed.svelte";
   import * as Pagination from "$lib/components/ui/pagination/index.js";
   import { ChevronLeftIcon, ChevronRightIcon } from "lucide-svelte";
   import { page } from "$app/state";
@@ -31,14 +31,18 @@
   siteName="Moch Jimmy Marchel - Portfolio"
 />
 
-<div
-  class="text-white z-50 relative flex flex-col items-center justify-center py-10"
->
-  <section class="flex flex-col px-2 sm:px-0 sm:w-xl gap-2 pb-5">
-    {#each posts as post}
-      <Card {post} />
-    {/each}
-  </section>
+<div class="min-h-screen py-12 px-6">
+  <div class="max-w-4xl mx-auto space-y-8">
+    <div class="space-y-2 pb-4 border-b border-border/40">
+      <h1 class="text-3xl font-bold tracking-tight">Writing</h1>
+      <p class="text-muted-foreground">Thoughts on development, security, CTF and everything in between.</p>
+    </div>
+
+    <section class="flex flex-col gap-6">
+      {#each posts as post}
+        <CardDetailed {post} />
+      {/each}
+    </section>
 
   <Pagination.Root {count} {perPage} bind:page={currentPage} {onPageChange}>
     {#snippet children({ pages, currentPage })}
@@ -71,4 +75,5 @@
       </Pagination.Content>
     {/snippet}
   </Pagination.Root>
+  </div>
 </div>

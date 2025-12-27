@@ -15,51 +15,74 @@ I use this website to store my CTF writeups and maybe share my interesting exper
   siteName="Moch Jimmy Marchel - Portfolio"
 />
 
-<div
-  class="text-white z-50 relative flex flex-col items-center justify-center pt-5"
->
-  <div class="flex items-center gap-2">
-    <Avatar.Root>
-      <Avatar.Image src="/my.jpeg" alt="My Avatar" />
-      <Avatar.Fallback>MJ</Avatar.Fallback>
-    </Avatar.Root>
+<div class="flex flex-col gap-12 sm:gap-16">
+  <section
+    class="flex flex-col-reverse sm:flex-row gap-8 sm:items-start justify-between"
+  >
+    <div class="flex flex-col gap-4 max-w-lg">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
+        Hey, I'm Moch Jimmy Marchel
+      </h1>
+      <p class="text-lg text-muted-foreground leading-relaxed">
+        Hi, I enjoy writing Typescript and
+        exploring Programming Languages. I use this website to store my CTF
+        writeups and maybe share my interesting experiences in the future.
+        Currently focused on learning web exploitation and secure coding
+        practices.
+      </p>
 
-    <div>
-      <p class="font-medium">Moch Jimmy Marchel</p>
-      <p class="text-[0.8rem] text-gray-300">Junior Pentester | Web Dev</p>
+      <div class="flex items-center gap-4 pt-4">
+        <a
+          href="https://github.com/jimarchel"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium hover:underline underline-offset-4"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/jimarchel"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium hover:underline underline-offset-4"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="mailto:dev@jimarchel.my.id"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium hover:underline underline-offset-4"
+        >
+          Email
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col pt-10 w-sm px-5 sm:px-0 sm:w-xl gap-2">
-    <h1
-      class="bg-gradient-to-br from-white to-gray-400/80 bg-clip-text text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
-    >
-      About Me
-    </h1>
-    <p class=" text-gray-300">
-      Hi there, I am Moch Jimmy Marchel. I enjoy writing Typescript. I am
-      interested in Programming Languages, CyberSecurity and I love to play CTF.
-    </p>
+    <div class="relative shrink-0">
+      <Avatar.Root class="size-24 sm:size-32 border-2 border-border/50">
+        <Avatar.Image src="/cat.jpeg" alt="Moch Jimmy Marchel" />
+        <Avatar.Fallback class="text-2xl">MJ</Avatar.Fallback>
+      </Avatar.Root>
+    </div>
+  </section>
 
-    <p class="text-gray-300">
-      I use this website to store my CTF writeups and maybe share my interesting
-      experiences in the future.
-    </p>
-  </div>
+  <!-- Latest Posts -->
+  <section class="flex flex-col gap-6">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-semibold tracking-tight">Latest Posts</h2>
+      <a
+        href="/posts"
+        class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+      >
+        View all
+      </a>
+    </div>
 
-  <section class="flex flex-col pt-15 px-5 sm:px-0 w-sm sm:w-xl gap-2 pb-10">
-    <h1
-      class="bg-gradient-to-br from-white to-gray-400/80 bg-clip-text text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
-    >
-      Latest Posts
-    </h1>
-    {#each slicedPosts as post}
-      <Card {post} />
-    {/each}
-    <a
-      href="/posts"
-      class="bg-gradient-to-br from-white to-gray-400/80 bg-clip-text font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10 text-center pt-5"
-      >View all posts...</a
-    >
+    <div class="grid gap-4">
+      {#each slicedPosts as post}
+        <Card {post} />
+      {/each}
+    </div>
   </section>
 </div>

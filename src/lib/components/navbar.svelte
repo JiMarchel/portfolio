@@ -1,29 +1,31 @@
 <script lang="ts">
-  import {
-    Github,
-    House,
-    Instagram,
-    Linkedin,
-    Mail,
-    PencilLine,
-  } from "lucide-svelte";
+  import { cn } from "$lib/utils";
+  import { page } from "$app/state";
+  
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/posts", label: "Posts" },
+  ];
 </script>
 
-<nav
-  class="border-b border-gray py-2 px-1 flex pt-5 items-center justify-between gap-14 sm:gap-2 shadow-2xl sm:w-2xl"
->
-  <div class="flex items-center gap-4">
-    <a href="/" class="hover:scale-125 transition-all duration-200">
-      <House />
-    </a>
-    <a href="/posts" class="hover:scale-125 transition-all duration-200">
-      <PencilLine />
-    </a>
+<header class="sticky top-0 z-50 w-full backdrop-blur-sm bg-background/80 border-b border-border/40">
+  <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+    <nav class="flex items-center gap-6">
+      {#each navItems as item}
+        <a 
+          href={item.href} 
+          class={cn(
+            "text-sm font-medium transition-colors hover:text-foreground",
+            page.url.pathname === item.href ? "text-foreground" : "text-muted-foreground"
+          )}
+        >
+          {item.label}
+        </a>
+      {/each}
+    </nav>
+    
+    <div class="flex items-center gap-4">
+      <!-- Add socials here or keep them in the hero if you prefer a cleaner nav -->
+    </div>
   </div>
-  <div class="flex items-center gap-4 ">
-    <a href="https://github.com/JiMarchel" target="_blank" class="hover:scale-125 transition-all duration-200"><Github /></a>
-    <a href="https://www.linkedin.com/in/jimarchel/" target="_blank" class="hover:scale-125 transition-all duration-200"><Linkedin /></a>
-    <a href="https://www.instagram.com/0xmarchel/" target="_blank" class="hover:scale-125 transition-all duration-200"><Instagram /></a>
-    <a href="mailto:dev@jimarchel.my.id" class="hover:scale-125 transition-all duration-200"><Mail /></a>
-  </div>
-</nav>
+</header>

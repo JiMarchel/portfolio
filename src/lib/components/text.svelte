@@ -22,11 +22,11 @@
   class="relative flex items-center gap-1"
 >
   {#if style === "blockquote"}
-    <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-300 my-1">
+    <blockquote class="mt-6 border-l-2 border-primary pl-6 italic text-muted-foreground">
       {@render children()}
     </blockquote>
   {:else if style === "normal"}
-    <p class="text-base my-1">
+    <p class="leading-7 [&:not(:first-child)]:mt-6 text-foreground/90">
       {@render children()}
     </p>
   {/if}

@@ -15,14 +15,17 @@
 </script>
 
 {#if imageUrl}
-  <figure class="">
-    <img 
-      src={imageUrl} 
-      alt={altText} 
-      class="rounded-sm max-w-full h-auto my-1" 
-    />
+  <figure class="my-10 space-y-3">
+    <div class="overflow-hidden rounded-xl border border-border/40 shadow-sm bg-muted/20">
+      <img 
+        src={imageUrl} 
+        alt={altText} 
+        class="w-full h-auto object-cover" 
+        loading="lazy"
+      />
+    </div>
     {#if value.caption}
-      <figcaption class="mt-2 text-sm text-gray-500 text-center">
+      <figcaption class="text-sm text-center text-muted-foreground italic px-4">
         {value.caption}
       </figcaption>
     {/if}

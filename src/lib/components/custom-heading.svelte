@@ -26,34 +26,45 @@
     })()
   );
 
-  let anchorId = $derived(`${value.children[0]?.text}`);
+  let anchorId = $derived(
+    value.children
+      ?.map((child: any) => child.text)
+      .join("")
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-") ?? ""
+  );
 </script>
 
 <!-- If preceded by heading, have a higher margin top -->
 <div
-  class="relative flex items-center gap-1 {precededByHeading
-    ? 'mt-10'
-    : 'mt-4'}"
+  class="relative group {precededByHeading
+    ? 'mt-12'
+    : 'mt-8'} mb-4 scroll-mt-20"
   id={anchorId}
 >
-  <a href="#{anchorId}">
-    <span class="sr-only">Link to this heading</span>
-    🔗
+  <a
+    href="#{anchorId}"
+    class="absolute -left-6 top-1.5 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground p-1"
+  >
+    #
   </a>
   {#if style === "h1"}
-    <h1 class="text-4xl font-bold">
+    <h1 class="text-4xl font-bold tracking-tight text-foreground">
       {@render children()}
     </h1>
   {:else if style === "h2"}
-    <h2 class="text-3xl font-bold">
+    <h2
+      class="text-3xl font-bold tracking-tight text-foreground border-b border-border/40 pb-2"
+    >
       {@render children()}
     </h2>
   {:else if style === "h3"}
-    <h3 class="text-xl font-bold">
+    <h3 class="text-2xl font-semibold tracking-tight text-foreground">
       {@render children()}
     </h3>
   {:else}
-    <h4 class="text-lg text-gray-600 font-bold">
+    <h4 class="text-xl font-semibold text-foreground">
       {@render children()}
     </h4>
   {/if}
