@@ -2,6 +2,7 @@
   import * as Avatar from "$lib/components/ui/avatar/index.js";
   import Card from "$lib/components/card-post.svelte";
   import Metadata from "$lib/components/metadata.svelte";
+  import Separator from "$lib/components/ui/separator/separator.svelte";
 
   let { data } = $props();
 
@@ -76,6 +77,8 @@ I use this website to store my CTF writeups and maybe share my interesting exper
       </Avatar.Root>
     </div>
   </section>
+
+  <Separator/>
 
   <section class="flex flex-col gap-6">
     <div class="flex items-center justify-between">
