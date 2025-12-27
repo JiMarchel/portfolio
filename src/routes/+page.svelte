@@ -36,7 +36,7 @@ I use this website to store my CTF writeups and maybe share my interesting exper
         </div>
       </div>
       <p class="text-lg text-muted-foreground leading-relaxed">
-        Hi, I enjoy writing Typescript and exploring Programming Languages. I
+        Halo hai!, I enjoy writing Typescript and exploring Programming Languages. I
         use this website to store my CTF writeups and maybe share my interesting
         experiences in the future. Currently focused on learning web
         exploitation and secure coding practices.
