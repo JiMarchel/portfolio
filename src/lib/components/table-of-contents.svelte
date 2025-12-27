@@ -8,7 +8,6 @@
   let { body, mode = "desktop" }: { body: any[]; mode?: "mobile" | "desktop" } =
     $props();
 
-  // Extract headings from PortableText blocks
   let headings = $derived(
     body
       .filter(
@@ -16,7 +15,6 @@
           block._type === "block" && ["h2", "h3"].includes(block.style)
       )
       .map((block: any) => {
-        // PortableText content is an array of children (spans), join them to get text
         const text =
           block.children?.map((child: any) => child.text).join("") ?? "";
         const slug = text
@@ -63,7 +61,6 @@
 </script>
 
 {#if mode === "mobile"}
-  <!-- Mobile View (Collapsible) -->
   <div class="mb-8 border border-border/60 rounded-lg p-4 bg-muted/30">
     <details class="group">
       <summary
@@ -103,7 +100,6 @@
 {/if}
 
 {#if mode === "desktop"}
-  <!-- Desktop View (Sidebar) -->
   <nav
     class="sticky top-24 self-start max-h-[calc(100vh-8rem)]  w-full"
   >

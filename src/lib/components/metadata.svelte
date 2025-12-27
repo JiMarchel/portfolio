@@ -1,12 +1,17 @@
 <script lang="ts">
+  import { page } from "$app/stores";
+
   let {
     pageTitle,
     pageDescription,
     siteName,
     author = "Moch Jimmy Marchel",
+    image = "/cat.jpeg",
   } = $props();
 
-  const imageUrl = $derived(`/hat.png`);
+  const imageUrl = $derived(
+    image.startsWith("http") ? image : $page.url.origin + image
+  );
 </script>
 
 <svelte:head>
@@ -18,23 +23,23 @@
   />
   <meta property="og:image" content={imageUrl} />
   <meta name="twitter:image" content={imageUrl} />
-  <meta name="twitter:image:alt" content="Moch Jimmy Marchel's Portrait" />
+  <meta name="twitter:image:alt" content={pageTitle} />
   <meta name="author" content={author} />
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDescription} />
-  <!-- <meta property="og:url" content={origin} /> -->
+  <meta property="og:url" content={$page.url.href} />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content={siteName} />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />
   <meta name="twitter:card" content="summary_large_image" />
-  <!-- <link rel="canonical" href={origin} /> -->
+  <link rel="canonical" href={$page.url.href} />
   <meta name="application-name" content={siteName} />
   <meta name="generator" content="SvelteKit" />
   <meta name="license" content="MIT" />
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#13111C" />
   <meta name="format-detection" content="telephone=no" />
-  <link rel="icon" href={imageUrl} />
+  <link rel="icon" href="/cat.jpeg" />
 </svelte:head>

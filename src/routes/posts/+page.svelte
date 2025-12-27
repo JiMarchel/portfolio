@@ -31,7 +31,7 @@
   siteName="Moch Jimmy Marchel - Portfolio"
 />
 
-<div class="min-h-screen py-12 px-6">
+<div class="min-h-screen">
   <div class="max-w-4xl mx-auto space-y-8">
     <div class="space-y-2 pb-4 border-b border-border/40">
       <h1 class="text-3xl font-bold tracking-tight">Writing</h1>

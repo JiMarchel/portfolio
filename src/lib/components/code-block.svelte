@@ -9,7 +9,6 @@
   import "prismjs/components/prism-bash";
   import "prismjs/components/prism-jsx";
   import "prismjs/components/prism-json";
-  // We can keep using okaidia or switch to a custom dark theme via Tailwind mainly
   import "prismjs/themes/prism-okaidia.css"; 
 
   import type { CustomBlockComponentProps } from "@portabletext/svelte";

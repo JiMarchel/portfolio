@@ -17,18 +17,28 @@ I use this website to store my CTF writeups and maybe share my interesting exper
 
 <div class="flex flex-col gap-12 sm:gap-16">
   <section
-    class="flex flex-col-reverse sm:flex-row gap-8 sm:items-start justify-between"
+    class="flex flex-col sm:flex-row gap-8 sm:items-start justify-between"
   >
-    <div class="flex flex-col gap-4 max-w-lg">
-      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
-        Hey, I'm Moch Jimmy Marchel
-      </h1>
+    <div class="flex flex-col gap-4 max-w-lg w-full">
+      <div class="flex items-center justify-between gap-4">
+        <h1
+          class="text-3xl sm:text-5xl font-bold tracking-tight text-foreground"
+        >
+          Hey, I'm Moch Jimmy Marchel
+        </h1>
+
+        <div class="relative shrink-0 sm:hidden">
+          <Avatar.Root class="size-24 border-2 border-border/50">
+            <Avatar.Image src="/cat.jpeg" alt="Moch Jimmy Marchel" />
+            <Avatar.Fallback class="text-2xl">MJ</Avatar.Fallback>
+          </Avatar.Root>
+        </div>
+      </div>
       <p class="text-lg text-muted-foreground leading-relaxed">
-        Hi, I enjoy writing Typescript and
-        exploring Programming Languages. I use this website to store my CTF
-        writeups and maybe share my interesting experiences in the future.
-        Currently focused on learning web exploitation and secure coding
-        practices.
+        Hi, I enjoy writing Typescript and exploring Programming Languages. I
+        use this website to store my CTF writeups and maybe share my interesting
+        experiences in the future. Currently focused on learning web
+        exploitation and secure coding practices.
       </p>
 
       <div class="flex items-center gap-4 pt-4">
@@ -59,15 +69,14 @@ I use this website to store my CTF writeups and maybe share my interesting exper
       </div>
     </div>
 
-    <div class="relative shrink-0">
-      <Avatar.Root class="size-24 sm:size-32 border-2 border-border/50">
+    <div class="relative shrink-0 hidden sm:block">
+      <Avatar.Root class="size-32 border-2 border-border/50">
         <Avatar.Image src="/cat.jpeg" alt="Moch Jimmy Marchel" />
         <Avatar.Fallback class="text-2xl">MJ</Avatar.Fallback>
       </Avatar.Root>
     </div>
   </section>
 
-  <!-- Latest Posts -->
   <section class="flex flex-col gap-6">
     <div class="flex items-center justify-between">
       <h2 class="text-xl font-semibold tracking-tight">Latest Posts</h2>

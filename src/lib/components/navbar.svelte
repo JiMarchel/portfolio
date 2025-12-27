@@ -15,7 +15,7 @@
         <a 
           href={item.href} 
           class={cn(
-            "text-sm font-medium transition-colors hover:text-foreground",
+            "font-medium transition-colors hover:text-foreground text-xl",
             page.url.pathname === item.href ? "text-foreground" : "text-muted-foreground"
           )}
         >
@@ -25,7 +25,6 @@
     </nav>
     
     <div class="flex items-center gap-4">
-      <!-- Add socials here or keep them in the hero if you prefer a cleaner nav -->
     </div>
   </div>
 </header>

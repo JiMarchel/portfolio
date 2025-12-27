@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { Calendar } from "lucide-svelte";
-
   export let post: {
     title: string;
     publishedAt: string;

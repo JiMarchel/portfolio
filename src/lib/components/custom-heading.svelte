@@ -36,7 +36,6 @@
   );
 </script>
 
-<!-- If preceded by heading, have a higher margin top -->
 <div
   class="relative group {precededByHeading
     ? 'mt-12'
