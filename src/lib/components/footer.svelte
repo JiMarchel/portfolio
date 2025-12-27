@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Github, Linkedin, Mail } from "lucide-svelte";
+
+  const currentYear = new Date().getFullYear();
 </script>
 
 <footer class="w-full border-t border-border/40 py-6 mt-12 md:mt-24">
@@ -7,7 +9,7 @@
     class="max-w-3xl mx-auto px-6 flex flex-row items-center justify-between gap-4"
   >
     <p class="text-sm text-muted-foreground">
-     © 2026
+     © {currentYear}
     </p>
 
     <div class="flex items-center gap-4">
