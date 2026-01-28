@@ -47,11 +47,9 @@
       <p>Loading post...</p>
     </div>
   {:else}
-    <div
-      class="max-w-7xl mx-auto md:px-6 grid grid-cols-1 xl:grid-cols-[1fr_280px] gap-10"
-    >
+    <div class="max-w-5xl mx-auto md:px-6">
       <article>
-        <header class="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
+        <header class="max-w-4xl mx-auto text-center mb-10 sm:mb-14">
           <div
             class="flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground mb-6"
           >
@@ -113,11 +111,11 @@
           </div>
         </div>
 
-        <div class="xl:hidden">
+        <div class="mb-8">
           <TableOfContents body={post.body} mode="mobile" />
         </div>
 
-        <div class="max-w-2xl mx-auto">
+        <div class="max-w-3xl mx-auto">
           <div class="prose prose-lg prose-invert text-muted-foreground">
             <PortableText
               value={post.body}
@@ -144,15 +142,6 @@
           </div>
         </div>
       </article>
-
-      <!-- <aside class="hidden xl:block">
-        <div class="sticky top-20">
-          <h2 class="text-lg font-bold mb-4 text-foreground">
-            Table of contents
-          </h2>
-          <TableOfContents body={post.body} mode="desktop" />
-        </div>
-      </aside> -->
     </div>
   {/if}
 </div>
