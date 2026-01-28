@@ -21,7 +21,7 @@
   const estimatedReadTime = $derived(
     post?.body
       ? Math.ceil(JSON.stringify(post.body).split(" ").length / 200)
-      : 5
+      : 5,
   );
 </script>
 
