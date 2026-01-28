@@ -145,14 +145,14 @@
         </div>
       </article>
 
-      <aside class="hidden xl:block">
+      <!-- <aside class="hidden xl:block">
         <div class="sticky top-20">
           <h2 class="text-lg font-bold mb-4 text-foreground">
             Table of contents
           </h2>
           <TableOfContents body={post.body} mode="desktop" />
         </div>
-      </aside>
+      </aside> -->
     </div>
   {/if}
 </div>

@@ -1,25 +1,34 @@
 <script lang="ts">
-  import type {MarkComponentProps} from '@portabletext/svelte'
-  import {type Snippet} from 'svelte'
+  import type { MarkComponentProps } from "@portabletext/svelte";
+  import { type Snippet } from "svelte";
 
   interface Props {
     portableText: MarkComponentProps<{
-      url?: string
-      newWindow?: boolean
-    }>
-    children: Snippet
+      href?: string;
+      url?: string;
+      newWindow?: boolean;
+      blank?: boolean;
+    }>;
+    children: Snippet;
   }
 
-  let {portableText, children}: Props = $props()
+  let { portableText, children }: Props = $props();
 
-  let {value} = $derived(portableText)
-  let newWindow = $derived(value.newWindow || false)
+  let { value } = $derived(portableText);
+  // Sanity uses 'href' for links, but some schemas use 'url'
+  let href = $derived(value.href || value.url);
+  let newWindow = $derived(value.newWindow || value.blank || false);
 </script>
 
-{#if value.url}
-  <a href={value.url} target={newWindow ? '_blank' : undefined} class="font-medium text-blue-500 hover:text-blue-400 hover:underline transition-colors">
+{#if href}
+  <a
+    {href}
+    target="_blank"
+    rel={newWindow ? "noopener noreferrer" : undefined}
+    class="font-medium text-blue-500 hover:text-blue-400 hover:underline transition-colors"
+  >
     {@render children()}
   </a>
 {:else}
-  {@render children()} 
+  {@render children()}
 {/if}
